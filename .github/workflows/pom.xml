@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>run.halo</groupId>
+        <artifactId>plugin-parent</artifactId>
+        <version>2.8.0</version> <!-- 根据你的Halo版本调整 -->
+    </parent>
+    
+    <groupId>run.halo.plugins</groupId>
+    <artifactId>halo2-alipay-plugin</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+    
+    <name>halo2-alipay-plugin</name>
+    <description>Halo 2.x Alipay Payment Plugin</description>
+    
+    <dependencies>
+        <!-- Halo API -->
+        <dependency>
+            <groupId>run.halo</groupId>
+            <artifactId>core-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- Alipay SDK -->
+        <dependency>
+            <groupId>com.alipay.sdk</groupId>
+            <artifactId>alipay-sdk-java</artifactId>
+            <version>4.10.104.ALL</version>
+        </dependency>
+        
+        <!-- 其他依赖 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
